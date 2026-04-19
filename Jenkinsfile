@@ -23,7 +23,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'node test.js'
+                sh '''
+                docker build -t test-image .
+                docker run --rm test-image node test.js
+                '''
             }
         }
 
