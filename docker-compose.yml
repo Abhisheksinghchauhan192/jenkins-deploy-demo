@@ -4,4 +4,4 @@ services:
   web:
     image: abhisheksinghchauhan192/demoapp:latest
     ports:
-      - "8000:8000"
+      - "3000:3000"
