@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'agent1'}
 
     environment {
         IMAGE_NAME = "demo-app"
@@ -32,7 +32,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d --name demo-container -p 3001:3000 $IMAGE_NAME'
+                sh 'docker-compose down && docker-compose up '
             }
         }
 
